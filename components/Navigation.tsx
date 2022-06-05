@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 
 const menu = [
   { name: "Home", href: "/" },
-  { name: "Wather", href: "/wather" },
+  { name: "Weather", href: "/weather" },
 ];
 
 function Navigation() {

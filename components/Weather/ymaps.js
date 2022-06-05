@@ -1,6 +1,7 @@
 import { useEffect } from "react";
+import { Box } from "@mui/material";
 
-function Ymaps({ setCoords }) {
+function Ymaps({ dot, setDot }) {
   useEffect(() => {
     function loadScript(src, callback) {
       let script = document.createElement("script");
@@ -28,7 +29,7 @@ function Ymaps({ setCoords }) {
         myMap = new ymaps.Map(
           "map",
           {
-            center: [55.755864, 37.617698],
+            center: dot.coords,
             zoom: 10,
           },
           {
@@ -39,7 +40,6 @@ function Ymaps({ setCoords }) {
       // Слушаем клик на карте.
       myMap.events.add("click", function (e) {
         var coords = e.get("coords");
-        setCoords(coords);
 
         // Если метка уже создана – просто передвигаем ее.
         if (myPlacemark) {
@@ -77,6 +77,18 @@ function Ymaps({ setCoords }) {
         myPlacemark.properties.set("iconCaption", "поиск...");
         ymaps.geocode(coords).then(function (res) {
           var firstGeoObject = res.geoObjects.get(0);
+          let name = [
+            // Название населенного пункта или вышестоящее административно-территориальное образование.
+            firstGeoObject.getLocalities().length
+              ? firstGeoObject.getLocalities()
+              : firstGeoObject.getAdministrativeAreas(),
+            // Получаем путь до топонима, если метод вернул null, запрашиваем наименование здания.
+            firstGeoObject.getThoroughfare() || firstGeoObject.getPremise(),
+          ]
+            .filter(Boolean)
+            .join(", ");
+
+          setDot({ name: name, coords: coords });
 
           myPlacemark.properties.set({
             // Формируем строку с данными об объекте.
@@ -99,9 +111,18 @@ function Ymaps({ setCoords }) {
   });
 
   return (
-    <>
-      <div id="map" style={{ width: "100%", height: "400px" }}></div>
-    </>
+    <Box
+      sx={{
+        boxShadow: 3,
+        width: "100%",
+        height: "400px",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "cenetr",
+      }}
+    >
+      <Box id="map" style={{ width: "95%", height: "95%" }}></Box>
+    </Box>
   );
 }
 
