@@ -1,4 +1,4 @@
-import { Box, Button } from "@mui/material";
+import { Container, Box, Button } from "@mui/material";
 import { useRouter } from "next/router";
 
 const menu = [
@@ -15,15 +15,17 @@ function Navigation() {
   };
 
   return (
-    <Box sx={{ display: "flex", justifyContent: "center" }}>
-      {menu.map((item, i) => {
-        return (
-          <Button key={i} href={item.href} onClick={handleClick}>
-            {item.name}
-          </Button>
-        );
-      })}
-    </Box>
+    <Container maxWidth="lg">
+      <Box sx={{ display: "flex", justifyContent: "center" }}>
+        {menu.map((item, i) => {
+          return (
+            <Button key={i} href={item.href} onClick={handleClick}>
+              {item.name}
+            </Button>
+          );
+        })}
+      </Box>
+    </Container>
   );
 }
 

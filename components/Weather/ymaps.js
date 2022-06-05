@@ -119,7 +119,7 @@ function Ymaps({ dot, setDot }) {
         height: "400px",
         display: "flex",
         justifyContent: "center",
-        alignItems: "cenetr",
+        alignItems: "center",
       }}
     >
       <Box id="map" style={{ width: "95%", height: "95%" }}></Box>
