@@ -73,10 +73,11 @@ function Home() {
               rel="noreferrer"
             >
               Интернет магазин - React, Redux, Nextjs, API Яндекс карт, c
-              админкой. внутри WordPress'а.
+              админкой.
             </a>
           </Box>
         </Box>
+        <Box sx={{ m: 3 }}>+7(977)375-92-82 WhatsApp Telegram</Box>
       </Box>
     </Container>
   );
