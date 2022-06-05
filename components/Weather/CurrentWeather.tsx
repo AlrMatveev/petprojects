@@ -6,7 +6,7 @@ function CurrentWeather({ dot }: any) {
   useEffect(() => {
     async function getWeather() {
       let response = await fetch(
-        `http://api.openweathermap.org/geo/1.0/direct?q=London&limit=5&appid=7f6b4081e42acb33bcce11a03f4d3526`
+        `https://api.openweathermap.org/geo/1.0/direct?q=London&limit=5&appid=7f6b4081e42acb33bcce11a03f4d3526`
       );
       const currentWeather = await response.json();
       console.log(currentWeather);
