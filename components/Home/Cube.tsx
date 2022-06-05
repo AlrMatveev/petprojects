@@ -49,8 +49,12 @@ function Cube() {
       </Box>
       <Box className={styles.container}>
         <Box id="cube" className={styles.cube}>
-          {nav.map((item) => {
-            return <Box className={item.side}>{item.text}</Box>;
+          {nav.map((item, i) => {
+            return (
+              <Box key={i} className={item.side}>
+                {item.text}
+              </Box>
+            );
           })}
           <Box className={styles.top}>5</Box>
           <Box className={styles.bottom}>2</Box>

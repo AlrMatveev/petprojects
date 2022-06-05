@@ -10,7 +10,11 @@ function Header() {
         textAlign: "center",
       }}
     >
-      <a href="https://github.com/AlrMatveev/petprojects" target="_blank">
+      <a
+        href="https://github.com/AlrMatveev/petprojects"
+        target="_blank"
+        rel="noreferrer"
+      >
         GitHub
       </a>
     </Box>
