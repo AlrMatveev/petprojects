@@ -5,8 +5,8 @@ import { ButtonGroup, Button, Container, Box } from "@mui/material";
 
 const nav = [
   { name: "One", side: styles.front, rotate: "0deg", text: "1" },
-  { name: "Two", side: styles.back, rotate: "-90deg", text: "2" },
-  { name: "Three", side: styles.right, rotate: "-180deg", text: "3" },
+  { name: "Two", side: styles.back, rotate: "-90deg", text: "3" },
+  { name: "Three", side: styles.right, rotate: "-180deg", text: "2" },
   { name: "Four", side: styles.left, rotate: "-270deg", text: "4" },
 ];
 
@@ -29,7 +29,7 @@ function Cube() {
 
   return (
     <Container maxWidth="lg">
-      {/* <Header /> */}
+      <Header />
       <Box
         sx={{
           m: 2,
@@ -57,8 +57,8 @@ function Cube() {
               </Box>
             );
           })}
-          <Box className={styles.top}>5</Box>
-          <Box className={styles.bottom}>2</Box>
+          <Box className={styles.top}>?</Box>
+          <Box className={styles.bottom}>?</Box>
         </Box>
       </Box>
     </Container>

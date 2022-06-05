@@ -35,7 +35,7 @@ function CurrentWeather({ dot }: any) {
             />
             <Box>Температура: {Math.round(weather.main.temp - 273.15)} С</Box>
             <Box>Влажность: {Math.round(weather.main.humidity)} %</Box>
-            <Box>Скорочть ветра: {Math.round(weather.wind.speed)} м/с</Box>
+            <Box>Скорость ветра: {Math.round(weather.wind.speed)} м/с</Box>
             <Box>
               Порывы ветра до:{" "}
               {isNaN(Math.round(weather.wind.gust))

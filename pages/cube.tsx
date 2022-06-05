@@ -1,20 +1,20 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Navigation from "../components/Navigation";
-import Home from "../components/Home/Home";
+import Cube from "../components/Cube/Cube";
 
-const HomePage: NextPage = () => {
+const CubePage: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Home</title>
-        <meta name="description" content="Home" />
+        <title>Cube</title>
+        <meta name="description" content="Cube" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navigation />
-      <Home />
+      <Cube />
     </>
   );
 };
 
-export default HomePage;
+export default CubePage;

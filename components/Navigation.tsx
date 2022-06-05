@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 const menu = [
   { name: "Главная", href: "/" },
   { name: "Погода", href: "/weather" },
+  { name: "Куб", href: "/cube" },
 ];
 
 function Navigation() {
