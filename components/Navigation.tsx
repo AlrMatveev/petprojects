@@ -1,9 +1,9 @@
-import { Container, Box, Button } from "@mui/material";
+import { Container, Box, ButtonGroup, Button } from "@mui/material";
 import { useRouter } from "next/router";
 
 const menu = [
-  { name: "Home", href: "/" },
-  { name: "Weather", href: "/weather" },
+  { name: "Главная", href: "/" },
+  { name: "Погода", href: "/weather" },
 ];
 
 function Navigation() {
@@ -16,14 +16,16 @@ function Navigation() {
 
   return (
     <Container maxWidth="lg">
-      <Box sx={{ display: "flex", justifyContent: "center" }}>
-        {menu.map((item, i) => {
-          return (
-            <Button key={i} href={item.href} onClick={handleClick}>
-              {item.name}
-            </Button>
-          );
-        })}
+      <Box sx={{ display: "flex", justifyContent: "center", m: 2 }}>
+        <ButtonGroup variant="contained">
+          {menu.map((item, i) => {
+            return (
+              <Button key={i} href={item.href} onClick={handleClick}>
+                {item.name}
+              </Button>
+            );
+          })}
+        </ButtonGroup>
       </Box>
     </Container>
   );
