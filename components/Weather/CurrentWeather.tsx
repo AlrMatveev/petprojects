@@ -1,5 +1,6 @@
 import { Box } from "@mui/material";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 function CurrentWeather({ dot }: any) {
   const [weather, setWeather] = useState<any>({});
@@ -14,18 +15,28 @@ function CurrentWeather({ dot }: any) {
     }
     getWeather();
   }, [dot]);
+
   console.log(weather);
+
   return (
-    <Box sx={{ boxShadow: 3, p: 2 }}>
+    <Box sx={{ boxShadow: 2, p: 2, backgroundColor: "white" }}>
       <Box>{dot.name}</Box>
-      <Box>Coords: {dot.coords.join(" ")}</Box>
+      <Box>Координаты: {dot.coords.join(" ")}</Box>
       <Box>
         {weather && weather.main ? (
           <>
+            <img
+              src={
+                "http://openweathermap.org/img/w/" +
+                weather.weather[0].icon +
+                ".png"
+              }
+              alt="Icon depicting current weather."
+            />
             <Box>Температура: {Math.round(weather.main.temp - 273.15)} С</Box>
             <Box>Влажность: {Math.round(weather.main.humidity)} %</Box>
-            <Box>Скорочть ветра: {Math.round(weather.wind.speed)} m/s</Box>
-            <Box>Порывы ветра до: {Math.round(weather.wind.gust)} m/s</Box>
+            <Box>Скорочть ветра: {Math.round(weather.wind.speed)} м/с</Box>
+            <Box>Порывы ветра до: {Math.round(weather.wind.gust)} м/с</Box>
           </>
         ) : (
           false

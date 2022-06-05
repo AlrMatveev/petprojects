@@ -114,12 +114,13 @@ function Ymaps({ dot, setDot }) {
   return (
     <Box
       sx={{
-        boxShadow: 3,
+        boxShadow: 2,
         width: "100%",
         height: "400px",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+        backgroundColor: "white",
       }}
     >
       <Box id="map" style={{ width: "95%", height: "95%" }}></Box>
