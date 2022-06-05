@@ -11,16 +11,17 @@ const nav = [
 ];
 
 function Cube() {
-  const cube: HTMLElement | null = document.getElementById("cube");
   useEffect(() => {
-    if (cube) {
-      cube.addEventListener("pointerdown", (event) => {
-        console.log(event.offsetX);
-      });
-    }
+    // const cube: HTMLElement | null = document.getElementById("cube");
+    // if (cube) {
+    //   cube.addEventListener("pointerdown", (event) => {
+    //     console.log(event.offsetX);
+    //   });
+    // }
   }, []);
 
   const handleClick = (event: any): void => {
+    const cube: HTMLElement | null = document.getElementById("cube");
     if (cube) {
       cube.style.transform = "rotateY(" + nav[event.target.value].rotate + ")";
     }
