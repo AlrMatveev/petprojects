@@ -25,6 +25,7 @@ function Ymaps({ dot, setDot }) {
     // загрузятся все компоненты API, а также когда будет готово DOM-дерево.
 
     function init() {
+      map.innerHTML = "";
       var myPlacemark,
         myMap = new ymaps.Map(
           "map",
@@ -108,7 +109,7 @@ function Ymaps({ dot, setDot }) {
         });
       }
     }
-  });
+  }, []);
 
   return (
     <Box
