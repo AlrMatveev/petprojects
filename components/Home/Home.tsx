@@ -4,8 +4,8 @@ import { Box, Container } from "@mui/material";
 function Home() {
   return (
     <Container maxWidth="lg">
-      {/* <Header /> */}
-      <Box
+      <Header />
+      {/* <Box
         sx={{
           display: "flex",
           flexDirection: "column",
@@ -78,7 +78,7 @@ function Home() {
           </Box>
         </Box>
         <Box sx={{ m: 3 }}>+7(977)375-92-82 WhatsApp Telegram</Box>
-      </Box>
+      </Box> */}
     </Container>
   );
 }
